@@ -10,11 +10,29 @@
     background-color: grey;
 }
 
+.cv1 {
+    background-image: url(../assets/images/cover1.jpg);
+    background-size: cover;    
+}
+
+.cv2 {
+    background-image: url(../assets/images/cover2.jpg);
+    background-size: cover;
+}
+
+.cv3 {
+    background-image: url(../assets/images/cover3.jpg);
+    background-size: cover;
+}
+
 .vinyl {
     width: 200px;
     height: 200px;
     background: black;
     border-radius: 50%;
+    z-index: -1;
+    transform: translateX(-200px);
+    transition: transform 0.5s;
 }
 
 .detail {
@@ -31,4 +49,8 @@
     height: 0.5rem;
     background: white;
     border-radius: 50%;
+}
+
+.open + .vinyl {
+    transform: translateX(-50px);
 }
