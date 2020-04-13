@@ -1,23 +1,19 @@
 export default class Song {
     constructor (k_song, v_song, c_song) {
-        this.audio = new Audio(v_song);
         this.element = document.querySelector(k_song);
-        this.btn = document.querySelector(c_song);
-        this.on = true;
+        this.audio = new Audio(v_song);
+        this.album = document.querySelector(c_song);
     }
 }
-
 export function play_song(song) {
     song.element.onclick = () => {
-        if (song.on) {
-            song.btn.classList.add("open");
+        if (song.audio.pause) {
+            song.album.classList.add("open");
             song.audio.play();
-            song.on = false;
         }
         else {
-            song.btn.classList.remove("open");
+            song.album.classList.remove("open");
             song.audio.pause();
-            song.on = true;
         }
     }
 }
