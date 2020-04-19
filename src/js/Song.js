@@ -7,7 +7,7 @@ export default class Song {
 }
 export function play_song(song) {
     song.element.onclick = () => {
-        if (song.audio.pause) {
+        if (song.audio.paused) {
             song.album.classList.add("open");
             song.audio.play();
         }
